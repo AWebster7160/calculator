@@ -1,33 +1,41 @@
+html{
+    cursor: url(./img/pointer-light.png), auto;
+}
 body {
     height: 100%;
     width: 100%;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     background-color: rgb(255, 229, 214);
+}
+button {
+    cursor: url(./img/pointer-light.png), auto;
 }
 .calculator-body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    margin-top: 20vh;
     align-items: center;
     flex: 0 0 auto;
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 420px;
 }
 #display {
     display: flex;
     flex-direction: row;
-    min-height: 60px;
-    width: 280px;
+    min-height: 80px;
+    width: 390px;
     border: solid;
     border-top-right-radius: 70px;
     border-top-left-radius: 70px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     background-color: rgb(169, 180, 130);
+    
 }
 .row {
     display: flex;
@@ -35,14 +43,14 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width:100%;
+    width: 400px;
 }
 .row button {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 0 0 auto;
-    width: 60px;
+    width: 90px;
     height: 60px;
     padding: 0px;
     border-radius: 26px;
@@ -51,7 +59,7 @@ body {
     background-color: rgb(253, 248, 239);
 }
 #row-five #zero {
-    width: 140px;
+    width: 194px;
     border-top-right-radius: 40px;
     border-top-left-radius: 40px;
     border-bottom-left-radius: 70px;
