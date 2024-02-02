@@ -3,7 +3,7 @@ let second = '';
 let op = '';
 let total = '';
 const doAdd = ((first, second) => {
-    total = first + second;
+    total = +first + +second;
     return total;
 })
   
@@ -40,6 +40,7 @@ add.onclick = (() => {
     op = '+';
     if (second !== '') {
         doAdd(first, second);
+        first = '';
         output.innerHTML = total;
     } else {
         second = first;
@@ -57,6 +58,7 @@ const zero = document.querySelector('#zero');
 
 const one = document.querySelector('#one');
 one.onclick = (() => {
+    output.innerHTML = first;
     first += 1;
     console.log(first);
     output.innerHTML = first;
