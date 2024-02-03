@@ -32,8 +32,12 @@ function operate() {
         doDiv(+second, +first)
     }
 }
-const changeSign = ((a) => {
-    a = (+a * -1);
+const changeSignTotal = ((a) => {
+    total = (+a * -1);
+    return a;
+})
+const changeSignFirst = ((a) => {
+    first = (+a * -1);
     return a;
 })
 
@@ -62,13 +66,14 @@ clear.onclick = () => {
 const sign = document.querySelector('#sign');
 sign.onclick = () => {
     if (first === '') {
-      changeSign(total);
-      output.innerHTML = total;  
+        console.log(total)
+        changeSignTotal(total);
+        console.log(total)
+        output.innerHTML = total;
     } else {
-        changeSign(first);
+        changeSignFirst(first);
         output.innerHTML = first;
     }
-    
 }
 
 const percentage = document.querySelector('#percentage');
@@ -126,7 +131,10 @@ subtract.onclick = (() => {
 })
 const add = document.querySelector('#add');
 add.onclick = (() => {
-    if (second !== '') {
+    if (clear.innerHTML === 'AC'){
+        second = total;
+    }
+    else if (second !== '') {
         operate();
         shown = total;
         output.innerHTML = shown;
