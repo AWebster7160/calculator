@@ -46,6 +46,11 @@ const toPercentFirst = ((a) => {
     return first;
 })
 
+const toPercentJustFirst = ((a) => {
+    first = (+a/100);
+    return first;
+})
+
 const toPercentTotal = ((a) => {
     total = (+a/100);
     return total;
@@ -93,6 +98,9 @@ percentage.onclick = () => {
         output.innerHTML = total;
     } else if (second !== '') {
         toPercentFirst(first);
+        output.innerHTML = first;
+    } else {
+        toPercentJustFirst(first);
         output.innerHTML = first;
     }
 };
@@ -184,6 +192,9 @@ equal.onclick = () => {
         operate();
         output.innerHTML = total;
         first = '';
+    } else if (first == '.') {
+        output.innerHTML = total;
+        first = '';
     } else if (second !== '') {
         operate();
         clear.innerHTML = 'AC'
@@ -195,10 +206,14 @@ equal.onclick = () => {
 }
 const decimal = document.querySelector('#decimal');
 decimal.onclick = (() => {
-    first += '.';
-    shown = first;
-    output.innerHTML = shown;
-    });
+    if (first.includes('.')){
+        return;
+    } else {
+        first += '.';
+        shown = first;
+        output.innerHTML = shown;
+    }
+});
 
 const zero = document.querySelector('#zero');
 zero.onclick = (() => {
