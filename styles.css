@@ -60,6 +60,14 @@ button:hover {
     justify-content: space-between;
     width: 400px;
 }
+
+button.function {
+    background-color: rgb(255, 240, 213) !important;
+}
+
+button.operator {
+    background-color: rgb(221, 192, 255) !important;
+}
 .row button {
     display: flex;
     justify-content: center;
@@ -71,7 +79,7 @@ button:hover {
     border-radius: 26px;
     font-size: 26px;
     font-weight:bolder;
-    background-color: rgb(253, 248, 239);
+    background-color: rgb(255, 207, 207);
 }
 #row-five #zero {
     width: 193.33px;
