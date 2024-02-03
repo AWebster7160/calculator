@@ -4,11 +4,23 @@ let op = '';
 let total = '';
 let shown = '';
 let repeat = '';
-const doAdd = ((first, second) => {
-    total = (+first + +second);
+const doAdd = ((a, b) => {
+    total = (+a + +b);
     return total;
 })
-  
+const doSub = ((b, a) => {
+    total = (+b - +a);
+    return total;
+})
+
+function operate() {
+    if (op === '+') {
+        doAdd(+first, +second)
+    } else if (op === '-') {
+        doSub(+second, +first)
+    }
+}
+
 const display = document.querySelector('#display');
 let output = document.createElement('div');
 output.setAttribute('id', 'output');
@@ -34,33 +46,41 @@ const divide = document.querySelector('#divide');
 const multiply = document.querySelector('#multiply');
 
 const subtract = document.querySelector('#subtract');
-
-
-
-const add = document.querySelector('#add');
-add.onclick = (() => {
-    op = '+';
-    if (second !== '' && first === '') {
-        doAdd(+total, +repeat)
-        shown = total;
-        output.innerHTML = shown;
-    } else if (second !== '') {
-        doAdd(+first, +second);
+subtract.onclick = (() => {
+    
+    if (second !== '') {
+        operate();
         shown = total;
         output.innerHTML = shown;
         second = total;
         repeat = first;
         first = '';
+        op = '-';
     } else {
         second = first;
         first = '';
+        op = '-';
+    }
+})
+const add = document.querySelector('#add');
+add.onclick = (() => {
+    if (second !== '') {
+        operate();
+        shown = total;
+        output.innerHTML = shown;
+        second = total;
+        repeat = first;
+        op = '+';
+        first = '';
+    } else {
+        second = first;
+        first = '';
+        op = '+';
     }
 })
 
-
 const equal = document.querySelector('#equal');
 equal.onclick = () => {
-
 }
 
 const zero = document.querySelector('#zero');
