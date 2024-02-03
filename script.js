@@ -81,6 +81,12 @@ add.onclick = (() => {
 
 const equal = document.querySelector('#equal');
 equal.onclick = () => {
+    if (second !== '') {
+    operate();
+    shown = total;
+    repeat = first;
+    output.innerHTML = total;
+    }
 }
 
 const zero = document.querySelector('#zero');

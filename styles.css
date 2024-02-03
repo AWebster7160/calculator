@@ -1,4 +1,4 @@
-html{
+html {
     cursor: url(./img/pointer-light.png), auto;
 }
 body {
@@ -9,9 +9,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(255, 229, 214);
+    background-color: rgb(255, 229, 214); 
 }
-button {
+button:active {
+    cursor: url(./img/pointer-bright.png), auto !important;
+}
+button:hover {
     cursor: url(./img/pointer-light.png), auto;
 }
 .calculator-body {
