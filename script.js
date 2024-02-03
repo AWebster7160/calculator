@@ -5,6 +5,11 @@ let total = '';
 let shown = '';
 let repeat = '';
 let equalLast = '';
+const sadCat = document.createElement('img');
+sadCat.setAttribute('id', 'sad-cat');
+sadCat.src = ('./img/sad-cat.png');
+
+
 const doAdd = ((a, b) => {
     total = (+a + +b);
     return total;
@@ -18,8 +23,19 @@ const doMult = ((a, b) => {
     return total;
 })
 const doDiv = ((b, a) => {
-    total = (+b / +a);
-    return total
+    if (a === 0) {
+        first = '';
+        second = '';
+        total = '';
+        repeat = '';
+        op = '';
+        shown = '';
+        output.innerHTML = '';
+        sadCat.animate(sadIn, sadTimeIn);
+        sadCat.animate(sadOut, sadTimeOut);
+    } else {
+        total = (+b / +a);
+        return total;}
 })
 function operate() {
     if (op === '+') {
@@ -301,3 +317,26 @@ nine.onclick = (() => {
     output.innerHTML = shown;
     clear.innerHTML = 'C';
     });
+    
+display.appendChild(sadCat);
+sadCat.style.opacity = 0;
+
+const sadIn = [
+    {opacity: 0},
+    {opacity: 1}
+]
+
+const sadOut = [
+    {opacity: 1},
+    {opacity: 0}
+]
+
+const sadTimeIn = {
+    duration: 500,
+    fill: 'forwards'
+}
+const sadTimeOut = {
+    duration: 500,
+    delay: 1300,
+    fill: 'forwards'
+}
