@@ -21,11 +21,12 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin-top: 20vh;
+    margin-top: 8vh;
     align-items: center;
     flex: 0 0 auto;
     width: 400px;
     height: 420px;
+    
 }
 #display {
     display: flex;
@@ -38,7 +39,18 @@ button:hover {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     background-color: rgb(169, 180, 130);
-    
+}
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 670px;
+    width: 1000px;
+    background-image: url(./img/cat-head.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 76px;
+    background-size: 780px;
 }
 .row {
     display: flex;
