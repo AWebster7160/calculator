@@ -127,3 +127,13 @@ button.operator {
     position: absolute;
     margin-right: 155px;
 }
+
+#paw-bottom {
+    position: absolute;
+    z-index: 10;
+    rotate: -80deg;
+    height: 500px;
+    width: 500px;
+    margin-bottom: -1600px;
+    margin-left: -300px;
+}

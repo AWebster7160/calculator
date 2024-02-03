@@ -8,7 +8,11 @@ let equalLast = '';
 const sadCat = document.createElement('img');
 sadCat.setAttribute('id', 'sad-cat');
 sadCat.src = ('./img/sad-cat.png');
-
+const pawBottom = document.createElement('img');
+pawBottom.setAttribute('id', 'paw-bottom');
+pawBottom.src = ('./img/paw.svg');
+const background = document.querySelector('.background');
+background.appendChild(pawBottom);
 
 const doAdd = ((a, b) => {
     total = (+a + +b);
@@ -234,6 +238,7 @@ decimal.onclick = (() => {
 const zero = document.querySelector('#zero');
 zero.onclick = (() => {
     if (first == '') {
+        pawBottom.animate(pawBottomUp, pawTime);
         first = 0;
         shown = first;
         output.innerHTML = shown;
@@ -338,5 +343,14 @@ const sadTimeIn = {
 const sadTimeOut = {
     duration: 500,
     delay: 1300,
+    fill: 'forwards'
+}
+
+const pawBottomUp = [
+    {transform: 'translate(400px, -40px)', offset: '0.5'},
+    {transform: 'translate(-400px, 40px)'}
+]
+const pawTime = {
+    duration: 600,
     fill: 'forwards'
 }
