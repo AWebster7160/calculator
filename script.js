@@ -41,6 +41,16 @@ const changeSignFirst = ((a) => {
     return a;
 })
 
+const toPercentFirst = ((a) => {
+    first = ((+first/100)*a);
+    return first;
+})
+
+const toPercentTotal = ((a) => {
+    total = (+a/100);
+    return total;
+})
+
 const display = document.querySelector('#display');
 let output = document.createElement('div');
 output.setAttribute('id', 'output');
@@ -78,7 +88,13 @@ sign.onclick = () => {
 
 const percentage = document.querySelector('#percentage');
 percentage.onclick = () => {
-
+    if (clear.innerHTML === 'AC') {
+        toPercentTotal(total);
+        output.innerHTML = total;
+    } else if (second !== '') {
+        toPercentFirst(first);
+        output.innerHTML = first;
+    }
 };
 
 const divide = document.querySelector('#divide');
