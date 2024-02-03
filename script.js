@@ -12,12 +12,24 @@ const doSub = ((b, a) => {
     total = (+b - +a);
     return total;
 })
+const doMult = ((a, b) => {
+    total = (+a * +b);
+    return total;
+})
+const doDiv = ((b, a) => {
+    total = (+b / +a);
+    return total
+})
 
 function operate() {
     if (op === '+') {
         doAdd(+first, +second)
     } else if (op === '-') {
         doSub(+second, +first)
+    } else if (op === '*') {
+        doMult(+first, +second)
+    } else if (op === '/') {
+        doDiv(+second, +first)
     }
 }
 
@@ -42,12 +54,39 @@ percentage.onclick = () => {
 };
 
 const divide = document.querySelector('#divide');
-
+divide.onclick = (() => {
+    if (second !== '') {
+        operate();
+        shown = total;
+        output.innerHTML = shown;
+        second = total;
+        repeat = first;
+        first = '';
+        op = '/';
+    } else {
+        second = first;
+        first = '';
+        op = '/';
+    }
+})
 const multiply = document.querySelector('#multiply');
-
+multiply.onclick = (() => {
+    if (second !== '') {
+        operate();
+        shown = total;
+        output.innerHTML = shown;
+        second = total;
+        repeat = first;
+        first = '';
+        op = '*';
+    } else {
+        second = first;
+        first = '';
+        op = '*';
+    }
+})
 const subtract = document.querySelector('#subtract');
 subtract.onclick = (() => {
-    
     if (second !== '') {
         operate();
         shown = total;
@@ -88,6 +127,12 @@ equal.onclick = () => {
     output.innerHTML = total;
     }
 }
+const decimal = document.querySelector('#decimal');
+decimal.onclick = (() => {
+    first += '.';
+    shown = first;
+    output.innerHTML = shown;
+    });
 
 const zero = document.querySelector('#zero');
 zero.onclick = (() => {
