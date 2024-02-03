@@ -4,7 +4,7 @@ let op = '';
 let total = '';
 let shown = '';
 let repeat = '';
-let equalRepeat = '';
+let equalLast = '';
 const doAdd = ((a, b) => {
     total = (+a + +b);
     return total;
@@ -83,7 +83,10 @@ percentage.onclick = () => {
 
 const divide = document.querySelector('#divide');
 divide.onclick = (() => {
-    if (second !== '') {
+    if (clear.innerHTML === 'AC'){
+        second = total;
+        op = '/';
+    } else if (second !== '') {
         operate();
         shown = total;
         output.innerHTML = shown;
@@ -99,7 +102,10 @@ divide.onclick = (() => {
 })
 const multiply = document.querySelector('#multiply');
 multiply.onclick = (() => {
-    if (second !== '') {
+    if (clear.innerHTML === 'AC'){
+        second = total;
+        op = '*';
+    } else if (second !== '') {
         operate();
         shown = total;
         output.innerHTML = shown;
@@ -115,7 +121,10 @@ multiply.onclick = (() => {
 })
 const subtract = document.querySelector('#subtract');
 subtract.onclick = (() => {
-    if (second !== '') {
+    if (clear.innerHTML === 'AC'){
+        second = total;
+        op = '-';
+    } else if (second !== '') {
         operate();
         shown = total;
         output.innerHTML = shown;
@@ -133,8 +142,8 @@ const add = document.querySelector('#add');
 add.onclick = (() => {
     if (clear.innerHTML === 'AC'){
         second = total;
-    }
-    else if (second !== '') {
+        op = '+';
+    } else if (second !== '') {
         operate();
         shown = total;
         output.innerHTML = shown;
