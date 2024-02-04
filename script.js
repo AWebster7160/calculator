@@ -20,7 +20,7 @@ background.appendChild(pawLeft)
 
 const doAdd = ((a, b) => {
     total = (+a + +b );
-    if (total >= 1000000000|| total <= 1000000000) {
+    if (total >= 1000000000|| total <= -1000000000) {
         total = total.toExponential(4);
         return total;
     }
@@ -28,7 +28,7 @@ const doAdd = ((a, b) => {
 })
 const doSub = ((b, a) => {
     total = (+b - +a );
-    if (total >= 1000000000|| total <= 1000000000) {
+    if (total >= 1000000000|| total <= -1000000000) {
         total = total.toExponential(4);
         return total;
     }
@@ -36,7 +36,7 @@ const doSub = ((b, a) => {
 })
 const doMult = ((a, b) => {
     total = (+a * +b );
-    if (total >= 1000000000|| total <= 1000000000) {
+    if (total >= 1000000000|| total <= -1000000000) {
         total = total.toExponential(4);
         console.log(total);
         return total;
@@ -57,7 +57,7 @@ const doDiv = ((b, a) => {
     } else {
         total = (+b / +a);
         total = total.toFixed(6)
-        if (parseInt(total) >= 1000000000 || parseInt(total) <= 1000000000) {
+        if (parseInt(total) >= 1000000000 || parseInt(total) <= -1000000000) {
             total = parseInt(total).toExponential(4);
             return total;
         }
@@ -76,7 +76,7 @@ function operate() {
 }
 const changeSignTotal = ((a) => {
     total = (+a * -1);
-    if (total >= 1000000000 || total <= 1000000000) {
+    if (total >= 1000000000 || total <= -1000000000) {
         total = total.toExponential(4);
         return total;
     }
@@ -84,7 +84,7 @@ const changeSignTotal = ((a) => {
 })
 const changeSignFirst = ((a) => {
     first = (+a * -1);
-    if (first >= 1000000000 || first <= 1000000000) {
+    if (first >= 1000000000 || first <= -1000000000) {
         first = first.toExponential(4);
         return first;
     }
@@ -93,7 +93,7 @@ const changeSignFirst = ((a) => {
 
 const toPercentFirst = ((a) => {
     first = ((+first/100)*a);
-    if (first >= 1000000000 || first <= 1000000000) {
+    if (first >= 1000000000 || first <= -1000000000) {
         first = first.toExponential(4);
         return first;
     }
@@ -102,7 +102,7 @@ const toPercentFirst = ((a) => {
 
 const toPercentJustFirst = ((a) => {
     first = (+a/100);
-    if (first >= 1000000000 || first <= 1000000000) {
+    if (first >= 1000000000 || first <= -1000000000) {
         first = first.toExponential(4);
         return first;
     }
@@ -111,7 +111,7 @@ const toPercentJustFirst = ((a) => {
 
 const toPercentTotal = ((a) => {
     total = (+a/100);
-    if (total >= 1000000000 || total <= 1000000000) {
+    if (total >= 1000000000 || total <= -1000000000) {
         total = total.toExponential(4);
         return total;
     }
@@ -488,24 +488,24 @@ const pawThree = [
     {transform: 'translate(-470px, -80px)'}
 ]
 const pawFour = [
-    {transform: 'translate(470px, 80px)', offset: '0.5'},
-    {transform: 'translate(-470px, -80px)'}
+    {transform: 'translate(570px, 290px)', offset: '0.5'},
+    {transform: 'translate(-570px, -290px)'}
 ]
 const pawFive = [
-    {transform: 'translate(470px, 80px)', offset: '0.5'},
-    {transform: 'translate(-470px, -80px)'}
+    {transform: 'translate(630px, 220px)', offset: '0.5'},
+    {transform: 'translate(-630px, -220px)'}
 ]
 const pawSix = [
     {transform: 'translate(470px, 80px)', offset: '0.5'},
     {transform: 'translate(-470px, -80px)'}
 ]
 const pawSeven = [
-    {transform: 'translate(480px, 170px)', offset: '0.5'},
-    {transform: 'translate(-480px, -170px)'}
+    {transform: 'translate(530px, 220px)', offset: '0.5'},
+    {transform: 'translate(-530px, -220px)'}
 ]
 const pawEight = [
-    {transform: 'translate(470px, 80px)', offset: '0.5'},
-    {transform: 'translate(-470px, -80px)'}
+    {transform: 'translate(600px, 160px)', offset: '0.5'},
+    {transform: 'translate(-600px, -160px)'}
 ]
 const pawNine = [
     {transform: 'translate(470px, 80px)', offset: '0.5'},
