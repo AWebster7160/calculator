@@ -14,9 +14,13 @@ pawBottom.src = ('./img/paw.svg');
 const pawLeft = document.createElement('img');
 pawLeft.setAttribute('id', 'paw-left');
 pawLeft.src = ('./img/paw.svg');
+const pawRight = document.createElement('img');
+pawRight.setAttribute('id', 'paw-right');
+pawRight.src = ('./img/paw.svg');
 const background = document.querySelector('.background');
 background.appendChild(pawBottom);
-background.appendChild(pawLeft)
+background.appendChild(pawLeft);
+background.appendChild(pawRight)
 
 const doAdd = ((a, b) => {
     total = (+a + +b );
@@ -161,7 +165,7 @@ sign.onclick = () => {
 
 const percentage = document.querySelector('#percentage');
 percentage.onclick = () => {
-
+    pawRight.animate(pawPercent, pawTime);
     setTimeout (() => {
         if (clear.innerHTML === 'AC') {
             toPercentTotal(total);
@@ -178,7 +182,7 @@ percentage.onclick = () => {
 
 const divide = document.querySelector('#divide');
 divide.onclick = (() => {
-
+    pawRight.animate(pawDiv, pawTime);
     setTimeout (() => {
         if (clear.innerHTML === 'AC'){
             second = total;
@@ -200,7 +204,7 @@ divide.onclick = (() => {
 })
 const multiply = document.querySelector('#multiply');
 multiply.onclick = (() => {
-
+    pawRight.animate(pawMult, pawTime);
     setTimeout (() => {
         if (clear.innerHTML === 'AC'){
             second = total;
@@ -222,7 +226,7 @@ multiply.onclick = (() => {
 })
 const subtract = document.querySelector('#subtract');
 subtract.onclick = (() => {
-
+    pawRight.animate(pawSub, pawTime);
     setTimeout (() => {
         if (clear.innerHTML === 'AC'){
             second = total;
@@ -398,6 +402,7 @@ five.onclick = (() => {
 
 const six = document.querySelector('#six');
 six.onclick = (() => {
+    pawRight.animate(pawSix, pawTime);
     if (first.length <= 12) {
         setTimeout (() => {
             first += 6;
@@ -437,6 +442,7 @@ eight.onclick = (() => {
 
 const nine = document.querySelector('#nine');
 nine.onclick = (() => {
+    pawRight.animate(pawNine, pawTime);
     if (first.length <= 12) {
         setTimeout (() => {
             first += 9;
@@ -496,8 +502,8 @@ const pawFive = [
     {transform: 'translate(-630px, -220px)'}
 ]
 const pawSix = [
-    {transform: 'translate(470px, 80px)', offset: '0.5'},
-    {transform: 'translate(-470px, -80px)'}
+    {transform: 'translate(650px, -250px)', offset: '0.5'},
+    {transform: 'translate(-650px, 250px)'}
 ]
 const pawSeven = [
     {transform: 'translate(530px, 220px)', offset: '0.5'},
@@ -508,8 +514,8 @@ const pawEight = [
     {transform: 'translate(-600px, -160px)'}
 ]
 const pawNine = [
-    {transform: 'translate(470px, 80px)', offset: '0.5'},
-    {transform: 'translate(-470px, -80px)'}
+    {transform: 'translate(600px, -180px)', offset: '0.5'},
+    {transform: 'translate(-600px, 180px)'}
 ]
 const pawDecimal = [
     {transform: 'translate(440px, 90px)', offset: '0.5'},
@@ -532,20 +538,20 @@ const pawSign = [
     {transform: 'translate(-600px, -110px)'}
 ]
 const pawPercent = [
-    {transform: 'translate(470px, 80px)', offset: '0.5'},
-    {transform: 'translate(-470px, -80px)'}
+    {transform: 'translate(600px, -120px)', offset: '0.5'},
+    {transform: 'translate(-600px, 120px)'}
 ]
 const pawDiv = [
-    {transform: 'translate(470px, 80px)', offset: '0.5'},
-    {transform: 'translate(-470px, -80px)'}
+    {transform: 'translate(500px, -180px)', offset: '0.5'},
+    {transform: 'translate(-500px, 180px)'}
 ]
 const pawMult = [
-    {transform: 'translate(470px, 80px)', offset: '0.5'},
-    {transform: 'translate(-470px, -80px)'}
+    {transform: 'translate(520px, -250px)', offset: '0.5'},
+    {transform: 'translate(-520px, 250px)'}
 ]
 const pawSub = [
-    {transform: 'translate(470px, 80px)', offset: '0.5'},
-    {transform: 'translate(-470px, -80px)'}
+    {transform: 'translate(550px, -290px)', offset: '0.5'},
+    {transform: 'translate(-550px, 290px)'}
 ]
 const pawTime = {
     duration: 600,
